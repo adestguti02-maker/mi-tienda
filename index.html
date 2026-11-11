@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mi Tienda: app para controlar inventario, ventas y fiados en tiendas de barrio.">
+  <title>Mi Tienda</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#inicio" class="logo"><img src="img/logo.jpeg" alt="" width="34" height="34"><span>Mi<b>Tienda</b></span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mainNav">☰</button>
+      <nav id="mainNav" class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#problema">Problema</a></li>
+          <li><a href="#funciones">Funciones</a></li>
+          <li><a href="#demo">Prueba la app</a></li>
+          <li><a href="#comparativo">Comparativo</a></li>
+          <li><a href="#faq">Preguntas</a></li>
+          <li><a href="#contacto" class="btn btn-small">Lista de espera</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <p class="eyebrow">App para tiendas de barrio</p>
+          <h1>Tu tienda en orden: inventario, ventas y fiados en un solo lugar</h1>
+          <p>Deja el cuaderno. Mi Tienda te avisa cuando se acaba un producto, registra cada venta en segundos y te dice quién te debe y cuánto.</p>
+          <div class="hero-actions">
+            <a href="#demo" class="btn">Probar la demo</a>
+            <a href="#funciones" class="btn btn-outline">Ver funciones</a>
+          </div>
+        </div>
+        <div class="phone" aria-label="Ejemplo de la pantalla de la app">
+          <div class="phone-top">Mi Tienda · Hoy</div>
+          <div class="phone-stat"><span>Ventas del día</span><strong>$ 186.500</strong></div>
+          <div class="phone-row"><span>Arroz 500 g</span><em class="ok">12 und</em></div>
+          <div class="phone-row"><span>Panela</span><em class="low">4 und · bajo</em></div>
+          <div class="phone-row"><span>Huevos x30</span><em class="low">3 und · bajo</em></div>
+          <div class="phone-row"><span>Fiados pendientes</span><strong>$ 135.500</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="problema" class="section section-black">
+      <div class="container">
+        <h2>El problema</h2>
+        <p class="lead">En muchas tiendas pequeñas las cuentas se llevan en cuadernos o de memoria. Un billete confundido, un fiado olvidado o un producto que se agota sin avisar significan plata perdida y tiempo gastado haciendo cuentas.</p>
+        <div class="cards three">
+          <article class="card"><h3>Cuentas desordenadas</h3><p>Inventario y deudas de clientes en lugares distintos, o en ninguno.</p></article>
+          <article class="card"><h3>Plata que se pierde</h3><p>Errores al cobrar y fiados que no se recuerdan a tiempo.</p></article>
+          <article class="card"><h3>Poco tiempo</h3><p>Hacer cuentas a mano le quita horas al dueño de la tienda.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="funciones" class="section">
+      <div class="container">
+        <h2>Cuatro funciones, una sola app</h2>
+        <div class="cards four">
+          <article class="card feature"><img src="img/inventario.jpg" alt="" width="56" height="56"><h3>Inventario</h3><p>Anota tus productos y recibe un aviso cuando se estén acabando.</p></article>
+          <article class="card feature"><img src="img/ventas.jpg" alt="" width="56" height="56"><h3>Ventas</h3><p>Registra cada venta de forma rápida, incluso escaneando el código de barras.</p></article>
+          <article class="card feature"><img src="img/fiados.jpg" alt="" width="56" height="56"><h3>Fiados</h3><p>Lleva la lista de quién te debe, cuánto y cuánto ha abonado.</p></article>
+          <article class="card feature"><img src="img/reportes.jpg" alt="" width="56" height="56"><h3>Reportes</h3><p>Mira cuánto ganaste en el día o la semana y qué se vende más.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="demo" class="section section-black">
+      <div class="container">
+        <h2>Prueba la app</h2>
+        <p class="lead">Demo con datos de ejemplo. Vende productos y abona deudas para ver cómo responde.</p>
+        <div class="tabs" role="tablist" aria-label="Demostración">
+          <button class="tab active" role="tab" id="tab-inv" aria-selected="true" aria-controls="panel-inv" data-panel="panel-inv">Inventario</button>
+          <button class="tab" role="tab" id="tab-fia" aria-selected="false" aria-controls="panel-fia" data-panel="panel-fia">Fiados</button>
+        </div>
+
+        <div class="panel" id="panel-inv" role="tabpanel" aria-labelledby="tab-inv">
+          <p class="summary" id="stockSummary" role="status"></p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Producto</th><th>Existencias</th><th>Estado</th><th>Acción</th></tr></thead>
+              <tbody id="invBody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="panel" id="panel-fia" role="tabpanel" aria-labelledby="tab-fia" hidden>
+          <p class="summary" id="debtSummary" role="status"></p>
+          <div class="debt-list" id="debtList"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="comparativo" class="section">
+      <div class="container">
+        <h2>¿Por qué Mi Tienda?</h2>
+        <p class="lead">Ya existen apps para negocios, pero muchas son complejas o costosas. Mi Tienda está pensada solo para la tienda de barrio, con un uso muy sencillo y control de fiados.</p>
+        <div class="table-wrap">
+          <table class="compare">
+            <thead><tr><th>Característica</th><th>Treinta</th><th>Alegra POS</th><th>WhatsApp Business</th></tr></thead>
+            <tbody>
+              <tr><td>Inventario con alertas de stock bajo</td><td>Sí</td><td>Sí</td><td>No</td></tr>
+              <tr><td>Registro de ventas</td><td>Sí, y también gastos</td><td>Sí, con punto de venta</td><td>No</td></tr>
+              <tr><td>Control de deudas de clientes</td><td>Sí</td><td>Parcial</td><td>No</td></tr>
+              <tr><td>Costo</td><td>Gratis para empezar, con planes de pago</td><td>Planes de pago</td><td>Gratis</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="cards two plans">
+          <article class="card plan"><h3>Plan básico</h3><p class="tag">Gratis</p><ul><li>Inventario y ventas</li><li>Control de fiados</li><li>Avisos de stock bajo</li></ul></article>
+          <article class="card plan featured"><h3>Plan Pro</h3><p class="tag">Pago, por definir</p><ul><li>Todo lo del plan básico</li><li>Reportes avanzados</li><li>Recordatorios de cobro por WhatsApp</li></ul></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section section-black">
+      <div class="container narrow">
+        <h2>Preguntas frecuentes</h2>
+        <details><summary>¿Necesito internet para usarla?</summary><p>Solo para sincronizar. La app está pensada para funcionar sin conexión y guardar los datos en la nube cuando haya señal.</p></details>
+        <details><summary>¿Para qué celulares estará disponible?</summary><p>Se desarrollaría primero para Android, el sistema más usado, y luego se evaluaría una versión para iPhone.</p></details>
+        <details><summary>¿Tengo que saber de tecnología?</summary><p>No. La app busca ser muy fácil de usar, aunque la persona no tenga experiencia con aplicaciones.</p></details>
+        <details><summary>¿Qué pasa si pierdo el celular?</summary><p>La información se respalda en la nube, así que puedes recuperarla en otro dispositivo.</p></details>
+      </div>
+    </section>
+
+    <section id="contacto" class="section">
+      <div class="container narrow">
+        <h2>Únete a la lista de espera</h2>
+        <p class="lead">Déjanos tus datos y te avisamos cuando la app esté disponible.</p>
+        <form id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="field"><label for="nombre">Nombre completo</label><input type="text" id="nombre" name="nombre" required placeholder="Tu nombre"><small class="error" aria-live="polite"></small></div>
+            <div class="field"><label for="correo">Correo electrónico</label><input type="email" id="correo" name="correo" required placeholder="correo@ejemplo.com"><small class="error" aria-live="polite"></small></div>
+          </div>
+          <div class="form-row">
+            <div class="field"><label for="negocio">Tipo de negocio</label>
+              <select id="negocio" name="negocio" required>
+                <option value="">Selecciona</option><option>Tienda de barrio</option><option>Miscelánea</option><option>Panadería</option><option>Otro</option>
+              </select><small class="error" aria-live="polite"></small></div>
+            <div class="field"><label for="mensaje">¿Qué te gustaría que hiciera la app?</label><input type="text" id="mensaje" name="mensaje" placeholder="Opcional"><small class="error"></small></div>
+          </div>
+          <button type="submit" class="btn">Unirme</button>
+          <p id="formMsg" class="form-msg" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 Mi Tienda. Proyecto integrador de Ingeniería Web I.</p>
+      <p>Desarrollado por Adiel Esteban Gutierrez</p>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>
